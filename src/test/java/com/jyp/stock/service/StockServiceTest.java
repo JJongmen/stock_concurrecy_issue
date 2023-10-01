@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StockServiceTest {
 
     @Autowired
-    @Qualifier("synchronizedStockService")
+    @Qualifier("pessimisticLockStockService")
     private StockService stockService;
 
     @Autowired
