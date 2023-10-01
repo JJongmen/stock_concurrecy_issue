@@ -4,9 +4,9 @@ import com.jyp.stock.domain.Stock;
 import com.jyp.stock.repository.StockRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.concurrent.CountDownLatch;
@@ -19,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class StockServiceTest {
 
     @Autowired
+    @Qualifier("synchronizedStockService")
     private StockService stockService;
 
     @Autowired

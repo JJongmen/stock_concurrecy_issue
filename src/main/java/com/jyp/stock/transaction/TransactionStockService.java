@@ -1,19 +1,19 @@
 package com.jyp.stock.transaction;
 
-import com.jyp.stock.service.StockService;
+import com.jyp.stock.service.SynchronizedStockService;
 
 public class TransactionStockService {
 
-    private StockService stockService;
+    private SynchronizedStockService synchronizedStockService;
 
-    public TransactionStockService(final StockService stockService) {
-        this.stockService = stockService;
+    public TransactionStockService(final SynchronizedStockService synchronizedStockService) {
+        this.synchronizedStockService = synchronizedStockService;
     }
 
     public void decrease(Long id, Long quantity) {
         startTransaction();
 
-        stockService.decrease(id, quantity);
+        synchronizedStockService.decrease(id, quantity);
 
         endTransaction();
     }
